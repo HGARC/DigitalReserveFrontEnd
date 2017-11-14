@@ -21,6 +21,7 @@
     $(document).ready(function () {
       $('.select1').SumoSelect({ okCancelInMulti: true });
       $('#b1').click(function(){
+        $('#addedCourses').html($('.select1').find(":selected").text());
         $('#m1').modal('show');
       });
       $('#remove1').click(function(){
@@ -145,7 +146,7 @@
   </div>
 
   <div id="m1" class="ui basic modal">
-    <div class="ui icon header">
+    <div id="addedCourses" class="ui icon header">
       <i class="plus icon"></i>
       Add Items
     </div>
