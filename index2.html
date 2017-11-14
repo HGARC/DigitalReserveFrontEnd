@@ -19,22 +19,15 @@
 
     <script>
     $(document).ready(function () {
-      $('.select1').SumoSelect({ okCancelInMulti: true });
-      $('#b1').click(function(){
-        $('#addedCourses').html($('.select1').find(":selected").text());
-        $('#m1').modal('show');
+      $('.select1').SumoSelect();
+      $('.select1').change(function() {
+        $('#courseHeader').html($('.select1').find(":selected").text())
       });
-      $('#b2').click(function(){
-        $('#addedCourses').html($('.select1').find(":selected").text());
-        $('#m1').modal('show');
+      $('#add1').click(function(){
+        window.location.href = "index.html";
       });
-      $('#b3').click(function(){
-        $('#addedCourses').html($('.select1').find(":selected").text());
-        $('#m1').modal('show');
-      });
-      $('#remove1').click(function(){
-        window.location.href = "index3.html";
-      });
+
+
     });
     </script>
 
@@ -48,13 +41,10 @@
 
   <div class="ui vertical menu" style="display:inline-block">
     <div class="item">
-      <div class="ui input"><input type="text" placeholder="Search the archives..."></div>
-    </div>
-    <div class="item">
       Digital Reserve
       <div class="menu">
-        <a class="active item">Search + Add</a>
-        <a id="remove1" class="item">Remove</a>
+        <a id="add1" class="item">Search + Add</a>
+        <a id="remove1" class="active item">Remove</a>
       </div>
     </div>
     <div class="item">
@@ -65,7 +55,8 @@
 
 <div style="padding-left:50px;display:inline-block">
   <h3>My Courses</h3>
-  <select class="select1" multiple="multiple" placeholder="Select Courses">
+
+  <select class="select1" placeholder="Select Courses">
     <option value="ar100">AR100 A1</option>
     <option value="en170">WR150 B3</option>
     <option value="wr100">WR100 I4</option>
@@ -76,55 +67,13 @@
 </div>
 
 <div style="padding-left:50px;display:inline-block">
-<h3 class="ui icon header">
-  Search Results
+<h3 id="courseHeader" class="ui icon header">
+  AR100 A1
 </h3>
 
   <div class="ui cards" >
 
-    <div class="card">
-      <div class="content">
-        <div class="header">
-          THE NIGHT TRILOGY
-        </div>
-        <div class="meta">
-          Elie Wiesel
-        </div>
-        <div class="meta">
-          11/16/2007
-        </div>
-        <div class="description">
-          Page proofs, second pass master; TS with holograph editing marks, 344 p., Nov. 16, 2007.
-          Printed Material	English
-        </div>
-      </div>
-      <div class="extra content">
-          <div id="b1" class="ui inverted green button">Add</div>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="content">
-        <div class="header">
-          Student letters
-        </div>
-        <div class="meta">
-          Elie Wiesel
-        </div>
-        <div class="meta">
-          Correspondence
-        </div>
-        <div class="meta">
-          2012
-        </div>
-        <div class="description">
-        Letters from various students to Wiesel; usually as part of an assignment to read NIGHT, then write to Wiesel, either individually or as a class.
-        </div>
-      </div>
-      <div class="extra content">
-          <div id="b2" class="ui inverted green button">Add</div>
-      </div>
-    </div>
 
     <div class="card">
       <div class="content">
@@ -144,7 +93,7 @@
         </div>
       </div>
       <div class="extra content">
-          <div id="b3" class="ui inverted green button">Add</div>
+          <div class="ui inverted red button">Remove</div>
       </div>
     </div>
 
@@ -153,21 +102,7 @@
   </div>
   </div>
 
-  <div id="m1" class="ui basic modal">
-    <div id="addedCourses" class="ui icon header">
-      <i class="plus icon"></i>
-      Add Items
-    </div>
-    <div class="content">
-      <p>Added item to selected courses!</p>
-    </div>
-    <div class="actions">
-      <div class="ui green ok inverted button">
-        <i class="checkmark icon"></i>
-        Ok
-      </div>
-    </div>
-  </div>
+
 
 
 </body>
